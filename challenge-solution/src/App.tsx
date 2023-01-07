@@ -1,4 +1,5 @@
 import "./App.css";
+import Chart from "./components/Chart/Chart";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Input from "./components/Input/Input";
@@ -10,9 +11,7 @@ function App() {
 
       <Input />
 
-      <div>
-        <h3>Chart Area</h3>
-      </div>
+      <Chart />
 
       <Footer />
     </div>
