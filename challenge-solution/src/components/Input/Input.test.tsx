@@ -3,9 +3,12 @@ import Input from "./Input";
 
 describe("Input component", () => {
   it("render the component", () => {
-    render(<Input />);
+    // This call is to allow testing of a CodeMirror generated element
+    const getInput = jest.fn();
 
-    const inputArea = screen.getByLabelText("data-input");
+    render(<Input getInput={getInput} />);
+
+    const inputArea = screen.getByTestId("data-input");
     expect(inputArea).toBeInTheDocument();
   });
 });
