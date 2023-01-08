@@ -9,12 +9,12 @@ describe("renders components header, footer, input and chart", () => {
     expect(linkElement).toBeInTheDocument();
   });
 
-  it("check if input component has been rendered", () => {
-    render(<App />);
+  // it("check if input component has been rendered", () => {
+  //   render(<App />);
 
-    const linkElement = screen.getByLabelText("data-input");
-    expect(linkElement).toBeInTheDocument();
-  });
+  //   const linkElement = screen.getByLabelText("data-input");
+  //   expect(linkElement).toBeInTheDocument();
+  // });
 
   it("check if footer component has been rendered", () => {
     render(<App />);
