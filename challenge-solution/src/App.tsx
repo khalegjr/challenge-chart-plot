@@ -1,4 +1,4 @@
-import "./App.css";
+import GlobalStyle from "./assets/css/GlobalStyle";
 import Chart from "./components/Chart/Chart";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -8,15 +8,18 @@ const handleInput = () => {};
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <>
+      <GlobalStyle />
+      <div className="App">
+        <Header />
 
-      <Input getInput={handleInput} />
+        <Input getInput={handleInput} />
 
-      <Chart />
+        <Chart />
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }
 
