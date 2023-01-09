@@ -11,7 +11,7 @@ function App() {
     <>
       <GlobalStyle />
       <div className="App">
-        <Header />
+        <Header name="Júnior" />
 
         <Input getInput={handleInput} />
 
