@@ -2,10 +2,10 @@ import { json } from "@codemirror/lang-json";
 import { tags as t } from "@lezer/highlight";
 import { createTheme } from "@uiw/codemirror-themes";
 import ReactCodeMirror from "@uiw/react-codemirror";
-import { useEffect, useState } from "react";
 
 interface IProps {
-  getInput: Function;
+  value?: string;
+  onChange: (text: string) => void;
 }
 
 const myTheme = createTheme({
@@ -32,19 +32,7 @@ const myTheme = createTheme({
   ],
 });
 
-const Input: React.FC<IProps> = ({ getInput }) => {
-  const [value, setValue] = useState<string>("");
-
-  const handleInput = (value: string) => {
-    if (value != undefined) {
-      setValue(value.trim());
-    }
-  };
-
-  useEffect(() => {
-    getInput(value);
-  }, []);
-
+const Input: React.FC<IProps> = ({ value, onChange }) => {
   return (
     <ReactCodeMirror
       id="data-input"
@@ -53,7 +41,7 @@ const Input: React.FC<IProps> = ({ getInput }) => {
       height="200px"
       theme={myTheme}
       extensions={[json()]}
-      onChange={handleInput}
+      onChange={onChange}
       data-testid="data-input"
     />
   );

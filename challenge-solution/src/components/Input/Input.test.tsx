@@ -6,7 +6,7 @@ describe("Input component", () => {
     // This call is to allow testing of a CodeMirror generated element
     const getInput = jest.fn();
 
-    render(<Input getInput={getInput} />);
+    render(<Input onChange={getInput} />);
 
     const inputArea = screen.getByTestId("data-input");
     expect(inputArea).toBeInTheDocument();
