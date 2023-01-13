@@ -37,7 +37,7 @@ const Input: React.FC<IProps> = ({ value, onChange }) => {
     <ReactCodeMirror
       id="data-input"
       value={value}
-      width="100vw"
+      width="100%"
       height="200px"
       theme={myTheme}
       extensions={[json()]}

@@ -1,4 +1,9 @@
+import React from "react";
 import styled from "styled-components";
+
+type FooterProps = {
+  plotChart: () => void;
+};
 
 // Create a Wrapper component that'll render a <header> tag with some styles
 const Wrapper = styled.footer`
@@ -15,10 +20,10 @@ const ButtonChart = styled.button`
   border-radius: 5px;
 `;
 
-const Footer = () => {
+const Footer: React.FC<FooterProps> = ({ plotChart }) => {
   return (
-    <Wrapper style={{ position: "absolute", bottom: 0 }}>
-      <ButtonChart>GENERATE CHART</ButtonChart>
+    <Wrapper>
+      <ButtonChart onClick={plotChart}>GENERATE CHART</ButtonChart>
     </Wrapper>
   );
 };
